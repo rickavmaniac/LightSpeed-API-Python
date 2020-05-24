@@ -1,6 +1,7 @@
 import requests
 from . import helper
 
+
 def getToken(config):
     # Get the Token
 
@@ -20,9 +21,10 @@ def getToken(config):
         config['message'] = 'Access Code expired or communication error. Try re-click the link to get another access code'
         return config
 
-def refreshToken(config):
+
+def refreshToken():
     # Refresh the Token
-    config = helper.readConfigFile(config)
+    config = helper.readConfigFile()
     if config['message']:
         return 'Error : config file not found. Click on the click to get a access code'
 
@@ -40,6 +42,7 @@ def refreshToken(config):
     else:
         config['message'] = 'Refresh token denied or communication error. Try re-click the link to get another access code'
         return config
+
 
 def GetAccountID(config):
     url = 'https://api.lightspeedapp.com/API/Account.json'

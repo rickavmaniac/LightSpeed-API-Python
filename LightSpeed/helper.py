@@ -6,8 +6,9 @@ def writeConfigToFile(config):
         json.dump(config, outfile)
 
 
-def readConfigFile(config):
+def readConfigFile():
     if not os.path.exists('config.json'):
+        config = {}
         config['message'] = 'File not found'
         return config
 

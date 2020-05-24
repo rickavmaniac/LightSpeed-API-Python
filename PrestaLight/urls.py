@@ -8,4 +8,5 @@ from LightSpeed import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', views.lightpeed, name='lightspeedPage'),
+    path('item/', views.item, name='ls_item'),
 ]

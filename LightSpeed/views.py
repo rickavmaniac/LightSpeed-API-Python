@@ -41,12 +41,18 @@ def lightpeed(request):
         config = ls_auth.getToken(config)
 
     else:
-        config = ls_auth.refreshToken(config)
+        config = ls_auth.refreshToken()
 
+
+
+    return render(request, 'LightSpeed/home.html', {'config': config })
+
+
+def item(request):
+    config = ls_auth.refreshToken()
     item = ls_item.getAllItem(config)
     item = item['Item']
     return render(request, 'LightSpeed/item.html', {'item': item})
-    #return render(request, 'LightSpeed/home.html', {'config': config })
 
 
 
