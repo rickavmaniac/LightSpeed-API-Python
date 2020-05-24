@@ -45,7 +45,7 @@ def lightpeed(request):
 
 
 
-    return render(request, 'LightSpeed/home.html', {'config': config })
+    return render(request, 'LightSpeed/ls_api.html', {'config': config })
 
 
 def item(request):

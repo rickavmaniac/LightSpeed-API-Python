@@ -1,0 +1,12 @@
+{% extends 'LightSpeed/base.html' %}
+
+{%  block content %}
+<div class="container-fluid">
+    <h2>Lightspeed API return url page</h2>
+    <br>
+    <p>Config raw info (for debug):</p>
+       <p>{{ config }}</p>
+        <br><br>
+        <p class="alert-warning">Message : {{ config.message }}</p>
+</div>
+{% endblock %}
