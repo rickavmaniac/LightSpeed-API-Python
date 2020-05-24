@@ -1,0 +1,20 @@
+{% extends 'LightSpeed/base.html' %}
+
+{%  block content %}
+{%  for i in item %}
+    <p><b>{{ i.itemID }}-{{ i.description }}</b><p>
+    Price:{% for p in i.Prices.ItemPrice %}
+        {% if p.useType == 'Default' %}
+            {{ p.amount }}
+        {%  endif %}
+    {% endfor %}
+<br>
+    Stock:{% for s in i.ItemShops.ItemShop %}
+        {% if s.shopID == '1' %}
+            {{ s.qoh }}
+        {%  endif %}
+    {% endfor %}
+    </p>
+    <br>
+{%  endfor %}
+{% endblock %}

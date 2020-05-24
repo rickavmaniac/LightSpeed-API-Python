@@ -1,0 +1,12 @@
+{% extends 'LightSpeed/base.html' %}
+
+{%  block content %}
+
+     <h2>Lightspeed return url page</h2>
+        <p>The return code is : {{ config.code }}</p>
+        <p>Client id : {{ config.client_id }}</p>
+        <br>
+        <a href="{{ config.url_access_code }}">Click here to get a access code from LightSpeed</a>
+        <br><br>
+        <p class="alert-warning">Message : {{ config.message }}</p>
+{% endblock %}
