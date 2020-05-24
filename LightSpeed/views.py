@@ -16,6 +16,10 @@ LightSpeed API
 
 
 # Create your views here.
+def home(request):
+    return render(request, 'LightSpeed/home.html')
+
+
 def lightpeed(request):
     # Get code from the return query from LightSpeed to our : localhost:8000/api?code=xyz
     code = request.GET.get('code')
