@@ -17,7 +17,7 @@ LightSpeed API
 
 # Create your views here.
 def home(request):
-    return render(request, 'LightSpeed/home.html')
+    return render(request, 'home.html')
 
 
 def lightpeed(request):
@@ -49,14 +49,14 @@ def lightpeed(request):
 
 
 
-    return render(request, 'LightSpeed/ls_api.html', {'config': config })
+    return render(request, 'ls_api.html', {'config': config })
 
 
 def item(request):
     config = ls_auth.refreshToken()
     item = ls_item.getAllItem(config)
     item = item['Item']
-    return render(request, 'LightSpeed/item.html', {'item': item})
+    return render(request, 'item.html', {'item': item})
 
 
 
