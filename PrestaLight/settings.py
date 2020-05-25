@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')yx*#ourh+rubhs$0m59v_-z3a(4=%5%3$y_t6e#6)sm)qb@ex'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['http://rickavmaniac.pythonanywhere.com/']
 
 
 # Application definition
@@ -122,3 +122,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/admin")
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("No local setting file, production ?")
