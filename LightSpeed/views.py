@@ -1,22 +1,11 @@
 from django.shortcuts import render
 import requests, json, os.path
-from . import helper, ls_auth, ls_item
-
-"""
-LightSpeed API
-- To query the LightSpeed POS API we need a Token 
-- To get a Token we need a access code
-- The access code is provide by LightSpeed
-- So first thing is to obtain a access code, sent by lightspeed, to our localhost:8000/api
-- We need to tell lightspeed to send the access code to our site localhost:8000/api
-- Read LightSpeed documentation to learn more about how to setup that : https://developers.lightspeedhq.com/retail/authentication/authentication-overview/
-- Once the access code is get, we can do a GET request to obtain a Token
-
-"""
+from . import helper, ls_auth, ls_item, prestashop
 
 
 # Create your views here.
 def home(request):
+
     return render(request, 'home.html')
 
 
@@ -56,8 +45,10 @@ def item(request):
     config = ls_auth.refreshToken()
     item = ls_item.getAllItem(config)
     item = item['Item']
-    return render(request, 'item.html', {'item': item})
+    return render(request, 'item.html', {'item': item })
 
 
-
+def order_to_process(request):
+    data = prestashop.get_order_data()
+    return render(request, 'ordertoprocess.html', {'data': data })
 
