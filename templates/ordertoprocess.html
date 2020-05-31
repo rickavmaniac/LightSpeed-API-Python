@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{%  block content %}
+  <br>
+  <div class="container-fluid">
+    <h2>Order to process</h2>
+  </div>
+
+
+
+<table class="table table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Client</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for order in data %}
+    <tr class="table-active">
+      <td>{{ order.id }}</td>
+      <td>{{ order.date }}</td>
+      <td>{{ order.customer_firstname }} {{ order.customer_lastname }}</td>
+      <td>{{ order.total|floatformat:2}} $</td>
+
+       {% for item in order.items %}
+        <tr>
+        <td></td>
+        <td><small>{{ item.qty }}</small></td>
+        <td><small>{{ item.name }}</small></td>
+        <td><small>{{ item.price|floatformat:2 }}</small></td>
+
+
+     </tr>
+       {% endfor %}
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+
+{% endblock %}

@@ -10,4 +10,5 @@ urlpatterns = [
     path('api/', views.lightpeed, name='lightspeedPage'),
     path('', views.home, name='homePage'),
     path('item/', views.item, name='ls_item'),
+    path('ordertoprocess/', views.order_to_process, name='ordertoprocess'),
 ]

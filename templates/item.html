@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {%  block content %}
+    {{ prestashop }}
 {%  for i in item %}
     <p><b>{{ i.itemID }}-{{ i.description }}</b><p>
     Price:{% for p in i.Prices.ItemPrice %}
