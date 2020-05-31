@@ -29,8 +29,8 @@ def lightpeed(request):
     config['code'] = code
 
     # Set the config value (you need to ask LightSpeed for those values (see documentation)
-    config['client_id'] = '856f01aa3bb1ca8e8b7a8988e2e48ca6012d1c272d0661bbbc4c5f1fc1e46d34'
-    config['client_secret'] = '5b32ce33ca48abf7de455f4cb35b7bee37115310dc72a73e096a1760f6efd4a0'
+    config['client_id'] = 'your client id'
+    config['client_secret'] = 'your client secret'
 
     # Url to click in order to get the access code from LightSpeed
     config[
